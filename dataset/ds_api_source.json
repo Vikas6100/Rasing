@@ -1,0 +1,23 @@
+{
+	"name": "ds_api_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_rest_api",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_param_file_name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat(concat(dataset().ds_param_file_name,'.json'),'?limit=10000')",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
